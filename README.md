@@ -5,4 +5,4 @@
 - npm install
 - npm install axios
 - npm install react-router react-router-dom
-- npm install bootstrap
+- npm install react-bootstrap bootstrap
