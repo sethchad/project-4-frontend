@@ -15,6 +15,7 @@ export default class App extends Component {
     super() 
     this.state = {
       allMeals: [],
+      mealId: undefined
     }
   }
 
@@ -45,27 +46,27 @@ export default class App extends Component {
     
     await this.getAllMeals();
   }
-  
+
   updateMeal = async(e) => {
     e.preventDefault()
 
-    // console.log('updateMeal e.target:', e.target)
-    // console.log('updateMeal e.target[0]:', e.target[0])
+    console.log('updateMeal e.target:', e.target)
     console.log('updateMeal e.target.location.value:', e.target.location.value)
+    console.log('mealId:', e.target.id)
 
-    // let mealId = parseInt(e.target.mealId.value);
-    // console.log('mealId:', e.target.mealId.value)
+    let mealId = e.target.id;
 
-    // const url = baseURL + 'meals/' + mealId;
-    // let response = await axios.post(url, {
+    // const url = baseURL + mealId;
+    // let response = await axios.put(url, {
     //   name: e.target.name.value,
     //   imageUrl: e.target.image.value,
-    //   location: e.target.location.value
+    //   location: e.target.location.value,
+    //   directions: e.target.directions.value
     // }); 
     
     // console.log('updateMeal response:', response)
     
-    // await this.getAllMeals();
+    await this.getAllMeals();
   }
 
   // deleteMeal = async (e) => {
@@ -99,6 +100,7 @@ export default class App extends Component {
               <MealUpdate 
                 allMeals={this.state.allMeals} 
                 updateMeal={this.updateMeal}
+                setMealId={this.setMealId}
                 deleteMeal={this.deleteMeal}
                 addIngredient={this.addIngredient} 
                 deleteIngredient={this.deleteIngredient}

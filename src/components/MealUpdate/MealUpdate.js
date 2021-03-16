@@ -11,6 +11,8 @@ export default function MealUpdate(props) {
   // let updateLink = `/meal/update/${props.match.params.id}`
   console.log('MealUpdate meal:', meal)
 
+  // props.setMealId(meal.id);
+
   let ingredientList = [];
   if (meal != undefined) {
     ingredientList = meal.Ingredients.map((value,index) => {
@@ -36,7 +38,7 @@ export default function MealUpdate(props) {
         {/* </div> */}
         <h3>{meal.name}</h3>
         
-        <form onSubmit={(e) => props.updateMeal(e)}>
+        <form id={meal.id} onSubmit={(e) => props.updateMeal(e)}>
           <input placeholder={meal.name} name='name' />
           <br />
           <input placeholder={meal.imageUrl} name='imageUrl' />
@@ -45,7 +47,7 @@ export default function MealUpdate(props) {
           <br />
           <input placeholder={meal.directions} name='directions' />
           <br />
-          <input type="submit" value="Update Meal" />
+          <input id={meal.id} type="submit" value="Update Meal" />
           <br />
         </form>
         <br />
