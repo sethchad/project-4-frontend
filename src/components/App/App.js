@@ -95,6 +95,19 @@ export default class App extends Component {
           </Route>
 
           <Route 
+            path="/meal/update/:id" component={(routerProps) => (
+              <MealUpdate 
+                allMeals={this.state.allMeals} 
+                updateMeal={this.updateMeal}
+                deleteMeal={this.deleteMeal}
+                addIngredient={this.addIngredient} 
+                deleteIngredient={this.deleteIngredient}
+                {...routerProps} 
+              />
+            )}
+          />
+
+          <Route 
             path="/meal/:id" component={(routerProps) => (
               <MealDetail 
                 allMeals={this.state.allMeals} 
@@ -107,18 +120,7 @@ export default class App extends Component {
             )}
           />
 
-          <Route 
-            path="/meal/update/:id" component={(routerProps) => (
-              <MealUpdate 
-                allMeals={this.state.allMeals} 
-                updateMeal={this.updateMeal}
-                deleteMeal={this.deleteMeal}
-                addIngredient={this.addIngredient} 
-                deleteIngredient={this.deleteIngredient}
-                {...routerProps} 
-              />
-            )}
-          />
+          
 
         </Switch>
 

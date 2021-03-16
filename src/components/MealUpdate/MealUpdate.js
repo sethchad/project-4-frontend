@@ -9,7 +9,7 @@ export default function MealUpdate(props) {
 
   let meal = props.allMeals.find(meal => meal.id == props.match.params.id)
   // let updateLink = `/meal/update/${props.match.params.id}`
-  console.log('MealDetail meal:', meal)
+  console.log('MealUpdate meal:', meal)
 
   let ingredientList = [];
   if (meal != undefined) {
@@ -17,7 +17,7 @@ export default function MealUpdate(props) {
       return (
         <div className='ingredientItem'>
           <p key={value.description}>{value.description}</p>
-          {/* <Button variant="secondary">X</Button> */}
+          <Button variant="secondary">X</Button>
         </div>
       )
     })
@@ -25,27 +25,37 @@ export default function MealUpdate(props) {
 
   return (
     <div className='MealUpdate'>
-      {/* <div className='picAndUpdate'> */}
-      {/* <img src={meal.imageUrl} /> */}
-      {/* <br />
-      <Button variant="primary">
-        <Link to={updateLink}>Update</Link>
-      </Button> */}
-      {/* </div> */}
-      <h3>{meal.name}</h3>
-      
-      <form onSubmit={(e) => props.updateMeal(e)}>
-        <input placeholder={meal.name} name='name' />
+      {meal ?
+      <div className='MealUpdateContainer'> 
+        {/* <div className='picAndUpdate'> */}
+        {/* <img src={meal.imageUrl} /> */}
+        {/* <br />
+        <Button variant="primary">
+          <Link to={updateLink}>Update</Link>
+        </Button> */}
+        {/* </div> */}
+        <h3>{meal.name}</h3>
+        
+        <form onSubmit={(e) => props.updateMeal(e)}>
+          <input placeholder={meal.name} name='name' />
+          <br />
+          <input placeholder={meal.imageUrl} name='imageUrl' />
+          <br />
+          <input placeholder={meal.location} name='location' />
+          <br />
+          <input placeholder={meal.directions} name='directions' />
+          <br />
+          <input type="submit" value="Update Meal" />
+          <br />
+        </form>
         <br />
-        <input placeholder={meal.imageUrl} name='imageUrl' />
-        <br />
-        <input placeholder={meal.location} name='location' />
-        <br />
-        <input placeholder={meal.directions} name='directions' />
-        <br />
-        <input type="submit" value="Update Meal" />
-        <br />
-      </form>
+        
+        <h3>Ingredient List</h3>
+        <div className='ingredientList'>
+            {ingredientList}
+        </div>
+      </div>
+      : null }
     </div>
   )
 }
