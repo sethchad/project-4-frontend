@@ -11,6 +11,17 @@ export default function MealUpdate(props) {
   // let updateLink = `/meal/update/${props.match.params.id}`
   console.log('MealDetail meal:', meal)
 
+  let ingredientList = [];
+  if (meal != undefined) {
+    ingredientList = meal.Ingredients.map((value,index) => {
+      return (
+        <div className='ingredientItem'>
+          <p key={value.description}>{value.description}</p>
+          {/* <Button variant="secondary">X</Button> */}
+        </div>
+      )
+    })
+  }
 
   return (
     <div className='MealUpdate'>
