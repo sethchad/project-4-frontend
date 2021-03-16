@@ -1,4 +1,17 @@
+body {
+  margin: 0px;
+}
 .App {
   text-align: center;
 }
 
+.App .Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: tan;
+}
+
+.App .Header h4 {
+  color: white !important; 
+}

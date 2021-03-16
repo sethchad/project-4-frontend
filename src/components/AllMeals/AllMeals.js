@@ -9,7 +9,6 @@ export default function AllMeals(props) {
 
   let mealList = props.allMeals.map((value, index) => {
     return (
-      
         <li key={value.id}>
           <Link to={`/meal/${value.id}`}>{value.name}</Link>
           {/* <button key={`button-${value.id}`} 
