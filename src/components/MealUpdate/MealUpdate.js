@@ -39,13 +39,13 @@ export default function MealUpdate(props) {
         <h3>{meal.name}</h3>
         
         <form id={meal.id} onSubmit={(e) => props.updateMeal(e)}>
-          <input placeholder={meal.name} name='name' />
+          <input defaultValue={meal.name} name='name' />
           <br />
-          <input placeholder={meal.imageUrl} name='imageUrl' />
+          <input defaultValue={meal.imageUrl} name='imageUrl' />
           <br />
-          <input placeholder={meal.location} name='location' />
+          <input defaultValue={meal.location} name='location' />
           <br />
-          <input placeholder={meal.directions} name='directions' />
+          <textarea defaultValue={meal.directions} name='directions' />
           <br />
           <input id={meal.id} type="submit" value="Update Meal" />
           <br />

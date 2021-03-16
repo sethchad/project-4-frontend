@@ -40,7 +40,7 @@ export default function MealDetail(props) {
           {ingredientList}
         </div>
         <h2>Directions</h2>
-        <p>{meal.directions}</p>
+        <p className='whitespace'>{meal.directions}</p>
         <h2>Location</h2>
         <div className='map'>
           <p>I'll be a map one day.</p>

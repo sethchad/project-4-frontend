@@ -51,20 +51,21 @@ export default class App extends Component {
     e.preventDefault()
 
     console.log('updateMeal e.target:', e.target)
-    console.log('updateMeal e.target.location.value:', e.target.location.value)
-    console.log('mealId:', e.target.id)
+    console.log('updateMeal e.target.name, imageUrl, location, direction', e.target.name.value, e.target.imageUrl.value, e.target.location.value, e.target.directions.value)
+    // console.log('mealId:', e.target.id)
 
     let mealId = e.target.id;
 
-    // const url = baseURL + mealId;
-    // let response = await axios.put(url, {
-    //   name: e.target.name.value,
-    //   imageUrl: e.target.image.value,
-    //   location: e.target.location.value,
-    //   directions: e.target.directions.value
-    // }); 
+    const url = baseURL + 'meals/' + mealId;
+    console.log('url:', url)
+    let response = await axios.put(url, {
+      name: e.target.name.value,
+      imageUrl: e.target.imageUrl.value,
+      location: e.target.location.value,
+      directions: e.target.directions.value
+    }); 
     
-    // console.log('updateMeal response:', response)
+    console.log('updateMeal response:', response)
     
     await this.getAllMeals();
   }
