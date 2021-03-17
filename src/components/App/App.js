@@ -80,16 +80,16 @@ export default class App extends Component {
   addIngredient = async(e) => {
     e.preventDefault()
     let mealId = e.target.id;
-    console.log('mealId:', mealId)
-    console.log('addIngredient e.target.description.value:', e.target.description.value)
+    // console.log('mealId:', mealId)
+    // console.log('addIngredient e.target.description.value:', e.target.description.value)
 
-    // const url = baseURL + 'meals/' + mealId + '/newingredient'
-    // let response = await axios.post(url, {
-    //   description: e.target.description.value
-    // })
-    // console.log('updateMeal response:', response)
+    const url = baseURL + 'meals/' + mealId + '/newingredient'
+    let response = await axios.post(url, {
+      description: e.target.description.value
+    })
+    console.log('updateMeal response:', response)
     
-    // await this.getAllMeals();
+    await this.getAllMeals();
   }
 
   render() {
