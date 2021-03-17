@@ -118,44 +118,47 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
+        <div className='wrapper'>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
 
-          <Route exact path="/allmeals">
-            <AllMeals 
-              allMeals={this.state.allMeals} 
-              addMeal={this.addMeal} 
-              />
-          </Route>
-
-          <Route 
-            path="/meal/update/:id" component={(routerProps) => (
-              <MealUpdate 
+            <Route exact path="/allmeals">
+              <AllMeals 
                 allMeals={this.state.allMeals} 
-                updateMeal={this.updateMeal}
-                setMealId={this.setMealId}
-                deleteMeal={this.deleteMeal}
-                addIngredient={this.addIngredient} 
-                deleteIngredient={this.deleteIngredient}
-                {...routerProps} 
-              />
-            )}
-          />
+                addMeal={this.addMeal} 
+                />
+            </Route>
 
-          <Route 
-            path="/meal/:id" component={(routerProps) => (
-              <MealDetail 
-                allMeals={this.state.allMeals} 
-                updateMeal={this.updateMeal}
-                deleteMeal={this.deleteMeal}
-                addIngredient={this.addIngredient} 
-                deleteIngredient={this.deleteIngredient}
-                {...routerProps} 
-              />
-            )}
-          />
-        </Switch>
+            <Route 
+              path="/meal/update/:id" component={(routerProps) => (
+                <MealUpdate 
+                  allMeals={this.state.allMeals} 
+                  updateMeal={this.updateMeal}
+                  setMealId={this.setMealId}
+                  deleteMeal={this.deleteMeal}
+                  addIngredient={this.addIngredient} 
+                  deleteIngredient={this.deleteIngredient}
+                  {...routerProps} 
+                />
+              )}
+            />
+
+            <Route 
+              path="/meal/:id" component={(routerProps) => (
+                <MealDetail 
+                  allMeals={this.state.allMeals} 
+                  updateMeal={this.updateMeal}
+                  deleteMeal={this.deleteMeal}
+                  addIngredient={this.addIngredient} 
+                  deleteIngredient={this.deleteIngredient}
+                  {...routerProps} 
+                />
+              )}
+            />
+          </Switch>
+          <div className='push'></div>
+        </div>
         <Footer />
       </div>
     );

@@ -1,5 +1,15 @@
 body {
   margin: 0px;
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+.push {
+  height: 50px;
 }
 
 .App {
