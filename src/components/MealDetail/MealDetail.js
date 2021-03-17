@@ -28,7 +28,7 @@ export default function MealDetail(props) {
     {meal ?
       <div className='MealDetailContainer'> 
         <div className='picAndUpdate'>
-        <img src={meal.imageUrl} />
+        <img src={meal.imageUrl} alt={meal.name}/>
         <br />
         <Button variant="primary">
           <Link to={updateLink}>Update</Link>

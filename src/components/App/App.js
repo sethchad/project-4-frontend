@@ -78,18 +78,34 @@ export default class App extends Component {
   //   await axios.delete(`${backendUrl}/meals/${mealId}`);
 
   addIngredient = async(e) => {
-    e.preventDefault()
+    e.preventDefault();
     let mealId = e.target.id;
     // console.log('mealId:', mealId)
     // console.log('addIngredient e.target.description.value:', e.target.description.value)
-
+    
     const url = baseURL + 'meals/' + mealId + '/newingredient'
     let response = await axios.post(url, {
       description: e.target.description.value
     })
-    console.log('updateMeal response:', response)
+    console.log('addIngredient response:', response)
     
     await this.getAllMeals();
+  }
+  
+  deleteIngredient = async(e) => {
+    e.preventDefault();
+    console.log('deleteIngredient e.target', e.target)
+    
+    let ingredientId = e.target.id;
+    console.log('ingredientId:', ingredientId)
+
+    const url = baseURL + 'meals/' + ingredientId + '/deleteingredient'
+    let response = await axios.delete(url)
+
+    console.log('deleteIngredient response:', response)
+    
+    await this.getAllMeals();
+    await this.componentDidMount();
   }
 
   render() {
