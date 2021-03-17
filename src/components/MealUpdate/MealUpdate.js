@@ -6,16 +6,16 @@ import Form from 'react-bootstrap/Form';
 
 export default function MealUpdate(props) {
 
-  console.log('MealUpdate props:', props)
+  // console.log('MealUpdate props:', props)
 
   let meal = props.allMeals.find(meal => meal.id == props.match.params.id);
-  console.log('MealUpdate meal:', meal);
+  // console.log('MealUpdate meal:', meal);
 
   let mealIndex = props.allMeals.findIndex(meal => meal.id == props.match.params.id)
-  console.log('MealUpdate mealIndex:', mealIndex);
+  // console.log('MealUpdate mealIndex:', mealIndex);
 
 
-  // Shows the list of ingredients
+  // Creates the list of ingredients, used as a variable below
   let ingredientList = [];
   if (meal !== undefined) {
     ingredientList = meal.Ingredients.map((value,index) => {
@@ -28,8 +28,6 @@ export default function MealUpdate(props) {
             <Button 
               variant="secondary" 
               type="subit"
-              // id={value.id}
-              // onClick={(e) => props.deleteIngredient(e)}
             >X
             </Button>
           </form>

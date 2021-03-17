@@ -106,7 +106,7 @@ export default class App extends Component {
     this.setState({
         allMeals: allMealsCopy
       })
-      
+    
     await axios.delete(url);
     // await this.getAllMeals();
   }

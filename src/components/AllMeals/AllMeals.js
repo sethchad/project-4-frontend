@@ -6,9 +6,9 @@ import Button from 'react-bootstrap/Button';
 
 export default function AllMeals(props) {
 
-  if (props !== undefined) {
-    console.log('AllMeals props:', props)
-  }
+  // if (props !== undefined) {
+  //   console.log('AllMeals props:', props)
+  // }
 
   let mealList = props.allMeals.map((value, index) => {
     return (
@@ -26,16 +26,8 @@ export default function AllMeals(props) {
   return( 
     <div className='AllMeals'>
 
-      {/* <form onSubmit={(e) => props.addMeal(e)}>
-        <input placeholder='Name of Meal' name='name' />
-        <input type="submit" value="Add Meal" />
-      </form> */}
-
       <Form className='form' onSubmit={(e) => props.addMeal(e)}>
-        {/* <Form.Group> */}
-          {/* <Form.Label>Add A New Meal!</Form.Label> */}
-          <Form.Control placeholder="ex. Newton's Tasty Tacos" name='name'/>
-        {/* </Form.Group> */}
+        <Form.Control placeholder="ex. Newton's Tasty Tacos" name='name'/>
         <Button variant="primary" type="submit">Add Meal</Button>
       </Form>
 
