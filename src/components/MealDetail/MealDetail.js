@@ -34,27 +34,22 @@ export default function MealDetail(props) {
           <Link to={updateLink}>Update</Link>
         </Button>
         </div>
+        
         <h2>{meal.name}</h2>
+
         <h3>Ingredients</h3>
         <div className='ingredientList'>
           {ingredientList}
         </div>
+
         <h2>Directions</h2>
         <p className='whitespace'>{meal.directions}</p>
+        
         <h2>Location</h2>
         <div className='map'>
           <p>I'll be a map one day.</p>
         </div>
-        {/* <form onSubmit={(e) => props.updateMeal(e)}>
-          <input placeholder={meal.name} name='name' />
-          <br />
-          <input placeholder={meal.imageUrl} name='imageUrl' />
-          <br />
-          <input placeholder={meal.location} name='location' />
-          <br />
-          <input type="submit" value="Update Meal" />
-          <br />
-        </form> */}
+  
         </div>
       : null }
     </div>
