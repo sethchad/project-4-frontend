@@ -6,11 +6,8 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <div className='Footer'>
-      
-      {/* <Link to="/"><h4 className='appName'>Recipe Book</h4></Link>
-      <Link to="/allmeals">
-        <Button variant="light" className='allMealsLink'>All Meals</Button>
-      </Link> */}
+      <h4>© 2021 Seth Chadwick</h4>
+      <a href='https://github.com/sethchad/project-4-frontend'>Project Details on GitHub</a>
     </div>
   )
 }

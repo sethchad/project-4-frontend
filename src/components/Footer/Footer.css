@@ -1,5 +1,15 @@
 .Footer {
+  display: flex;
+  justify-content: space-between;
   background-color: black;
   height: 50px;
+}
+
+.Footer h4 {
+  margin-left: 20px;
+}
+
+.Footer a {
+  margin-right: 20px;
 }
 
