@@ -35,8 +35,15 @@ export default function MealUpdate(props) {
     <div className='MealUpdate'>
       {meal ?
       <div className='MealUpdateContainer'> 
-        <h3 className='mealName'>{meal.name}</h3>
-        
+        <div className="MealUpdateHeader">
+          <h3 className='mealName'>{meal.name}</h3>
+          <Button 
+            variant="danger" 
+            id={meal.id}
+            onClick={(e) => props.deleteMeal(e) && props.history.push('/allmeals')}
+          >Delete Meal
+          </Button>
+        </div>
         <div className='entryForms'>
 
           <div className='mealDetailForm'>

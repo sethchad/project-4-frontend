@@ -70,12 +70,20 @@ export default class App extends Component {
     await this.getAllMeals();
   }
 
-  // deleteMeal = async (e) => {
-  //   e.preventDefault();
-  //   let mealId = parseInt(e.target.id);
-  //   let arrayIndex = e.target.getAttribute("arrayindex");
+  deleteMeal = async(e) => {
+    e.preventDefault();
+    console.log('deleteMeal e.target', e.target)
+    
+    let mealId = e.target.id;
+    console.log('mealId:', mealId)
 
-  //   await axios.delete(`${backendUrl}/meals/${mealId}`);
+    const url = baseURL + 'meals/' + mealId
+    let response = await axios.delete(url)
+
+    console.log('deleteMeal response:', response)
+    
+    await this.getAllMeals();
+  }
 
   addIngredient = async(e) => {
     e.preventDefault();
@@ -105,7 +113,6 @@ export default class App extends Component {
     console.log('deleteIngredient response:', response)
     
     await this.getAllMeals();
-    await this.componentDidMount();
   }
 
   render() {
