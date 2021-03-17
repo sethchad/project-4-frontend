@@ -10,7 +10,7 @@ import MealUpdate from '../MealUpdate/MealUpdate';
 import Footer from '../Footer/Footer';
 
 // let baseURL = 'http://localhost:3005/api/'
-let baseURL = 'https://git.heroku.com/chadwick-project-4-backend.git/api/'
+let baseURL = 'https://chadwick-project-4-backend.herokuapp.com/api/'
 
 // Heroku git URL 
 // https://git.heroku.com/chadwick-project-4-backend.git
