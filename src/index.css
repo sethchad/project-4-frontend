@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: local("Lato-Regular"),
+    url("./fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Redressed-Regular";
+  src: local("Redressed-Regular"),
+    url("./fonts/Redressed-Regular.ttf") format("truetype");
+  font-weight: normal;
+}

@@ -16,7 +16,7 @@ export default function AllMeals(props) {
           <Link to={`/meal/${value.id}`}>
           <Card.Img className='cardImg' variant="top" src={value.imageUrl} />
           <Card.Body>
-            <Card.Title>{value.name}</Card.Title>
+            <Card.Title className='cardTitle'>{value.name}</Card.Title>
           </Card.Body>
           </Link>
         </Card>

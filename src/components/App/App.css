@@ -1,18 +1,39 @@
 body {
   margin: 0px;
 }
+
 .App {
   text-align: center;
+  background-color: rgb(235, 230, 223);
+  font-family: Lato-Regular;
 }
 
 .App .Header {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 20px;
-  background-color: tan;
+  background-color: black;
 }
 
 .App .Header h4 {
   color: white !important; 
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.App .Header .appName {
+  color: white !important; 
+  font-size: 50px;
+  font-weight: 800;
+  padding-left: 20px;
+  font-family: Redressed-Regular;
+}
+
+.App .Header .allMealsLink {
+  color: white !important; 
+  font-size: 26px;
+  font-weight: 400;
+  padding-right: 20px;
+  padding-top: 20px;
 }

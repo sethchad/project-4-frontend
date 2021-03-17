@@ -119,8 +119,8 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className='Header'>
-          <Link to="/"><h4>Recipe Tracker</h4></Link>
-          <Link to="/allmeals"><h4>All Meals</h4></Link>
+          <Link to="/"><h4 className='appName'>Recipe Book</h4></Link>
+          <Link to="/allmeals"><h4 className='allMealsLink'>All Meals</h4></Link>
         </div>
         <Switch>
           <Route exact path="/" component={Home} />

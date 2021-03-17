@@ -1,0 +1,13 @@
+.Home {
+  margin: 50px;
+}
+
+.Home h1 {
+  font-size: 150px;
+  margin: 100px;
+  font-family: Redressed-Regular;
+}
+
+.Home p {
+  font-size: 30px;
+}
