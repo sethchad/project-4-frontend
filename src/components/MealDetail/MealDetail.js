@@ -15,41 +15,44 @@ export default function MealDetail(props) {
   if (meal != undefined) {
     ingredientList = meal.Ingredients.map((value,index) => {
       return (
-        <div className='ingredientItem'>
-          <p key={value.description}>{value.description}</p>
-          {/* <Button variant="secondary">X</Button> */}
-        </div>
+        // <div className='ingredientItem'>
+          <li className='ingredientItem' key={value.description}>{value.description}</li>
+        // </div>
       )
     })
   }
 
   return (
     <div className='MealDetail'>
-    {meal ?
-      <div className='MealDetailContainer'> 
-        <div className='picAndUpdate'>
-        <img src={meal.imageUrl} alt={meal.name}/>
-        <br />
-        <Button variant="primary">
-          <Link to={updateLink}>Update</Link>
-        </Button>
-        </div>
-        
-        <h2>{meal.name}</h2>
+      {meal ?
+        <div className='MealDetailContainer'> 
+          <div className='picAndUpdate'>
+            <img src={meal.imageUrl} alt={meal.name}/>
+            <br />
+            <Link to={updateLink}>
+              <Button variant="primary">Update Details</Button>
+            </Link>
+          </div>
+          
+          <div className='mealText'>
+            <h2>{meal.name}</h2>
 
-        <h3>Ingredients</h3>
-        <div className='ingredientList'>
-          {ingredientList}
-        </div>
+            <h3>Ingredients</h3>
+            <div className='ingredientList'>
+              <ul>
+                {ingredientList}
+              </ul>
+            </div>
 
-        <h2>Directions</h2>
-        <p className='whitespace'>{meal.directions}</p>
-        
-        <h2>Location</h2>
-        <div className='map'>
-          <p>I'll be a map one day.</p>
-        </div>
-  
+            <h3>Directions</h3>
+            <p className='whitespace'>{meal.directions}</p>
+            
+            <h3>Location</h3>
+            <div className='map'>
+              <p>I'll be a map one day.</p>
+            </div>
+          </div>
+
         </div>
       : null }
     </div>

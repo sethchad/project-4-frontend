@@ -1,3 +1,13 @@
+.MealUpdate .mealUpdateHeader {
+  margin: 40px auto;
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
+}
+
+.MealUpdate .mealUpdateHeader .button {
+  width: 125px;
+}
 
 .MealUpdate .entryForms {
   margin: 0 auto;

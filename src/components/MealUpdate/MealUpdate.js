@@ -35,9 +35,12 @@ export default function MealUpdate(props) {
     <div className='MealUpdate'>
       {meal ?
       <div className='MealUpdateContainer'> 
-        <div className="MealUpdateHeader">
           <h3 className='mealName'>{meal.name}</h3>
-          <Button 
+        <div className="mealUpdateHeader">
+          <Link to={`/meal/${meal.id}`}>
+            <Button className='button' variant="success">Back</Button>
+          </Link>
+          <Button className='button'
             variant="danger" 
             id={meal.id}
             onClick={(e) => props.deleteMeal(e) && props.history.push('/allmeals')}

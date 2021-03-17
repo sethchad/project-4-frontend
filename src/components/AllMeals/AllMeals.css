@@ -1,11 +1,43 @@
+.AllMeals .form {
+  display: flex;
+  margin: 20px auto;
+  width: 400px;
+}
+
+.AllMeals .form .button {
+  width: 130px !important; 
+  margin-left: 5px;
+}
+
 .AllMeals .mealCardArray {
   margin: 0 auto;
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .AllMeals .card {
   margin: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px gray;
 }
+
+.AllMeals .cardImg {
+  border-radius: 10px 10px 0 0;
+}
+
+@media (max-width: 400px) {
+  .AllMeals .form {
+    display: inline;
+    margin: 20px auto;
+    width: 200;
+  }
+  
+  .AllMeals .form .button {
+    width: 130px !important; 
+    margin-left: 5px;
+  }
+
+}
+
