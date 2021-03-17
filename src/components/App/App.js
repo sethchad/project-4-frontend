@@ -11,6 +11,9 @@ import Footer from '../Footer/Footer';
 
 let baseURL = 'http://localhost:3005/api/'
 
+// Heroku git URL 
+// https://git.heroku.com/chadwick-project-4-backend.git
+
 export default class App extends Component {
   constructor() {
     super() 
