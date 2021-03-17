@@ -36,7 +36,7 @@ export default function AllMeals(props) {
           {/* <Form.Label>Add A New Meal!</Form.Label> */}
           <Form.Control placeholder="ex. Newton's Tasty Tacos" name='name'/>
         {/* </Form.Group> */}
-        <button className='btn btn-primary button' type="submit">Add Meal</button>
+        <Button variant="primary" type="submit">Add Meal</Button>
       </Form>
 
       <div className='mealCardArray'>

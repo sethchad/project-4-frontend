@@ -8,24 +8,31 @@ export default function MealUpdate(props) {
 
   console.log('MealUpdate props:', props)
 
-  let meal = props.allMeals.find(meal => meal.id == props.match.params.id)
-  // let updateLink = `/meal/update/${props.match.params.id}`
-  console.log('MealUpdate meal:', meal)
+  let meal = props.allMeals.find(meal => meal.id == props.match.params.id);
+  console.log('MealUpdate meal:', meal);
 
-  // props.setMealId(meal.id);
+  let mealIndex = props.allMeals.findIndex(meal => meal.id == props.match.params.id)
+  console.log('MealUpdate mealIndex:', mealIndex);
 
+
+  // Shows the list of ingredients
   let ingredientList = [];
   if (meal !== undefined) {
     ingredientList = meal.Ingredients.map((value,index) => {
       return (
         <div key={index} className='ingredientItem'>
           <p>{value.description}</p>
-          <Button 
-            variant="secondary" 
-            id={value.id}
-            onClick={(e) => props.deleteIngredient(e)}
-          >X
-          </Button>
+          <form id={value.id} onSubmit={(e) => props.deleteIngredient(e)}>
+            <input type='hidden' name='mealIndex' value={mealIndex} />
+            <input type='hidden' name='ingredientIndex' value={index} />
+            <Button 
+              variant="secondary" 
+              type="subit"
+              // id={value.id}
+              // onClick={(e) => props.deleteIngredient(e)}
+            >X
+            </Button>
+          </form>
         </div>
       )
     })
@@ -92,3 +99,4 @@ export default function MealUpdate(props) {
     </div>
   )
 }
+

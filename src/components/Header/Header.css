@@ -1,0 +1,42 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: black;
+}
+
+.Header .appName {
+  color: white !important; 
+  font-size: 50px;
+  font-weight: 800;
+  padding-left: 20px;
+  font-family: Redressed-Regular;
+}
+
+.Header .btn {
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 20px;
+  margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+  .Header {
+    display: block;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: black;
+  }
+  
+  .Header .appName {
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .Header .btn {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px auto;
+  }
+}
