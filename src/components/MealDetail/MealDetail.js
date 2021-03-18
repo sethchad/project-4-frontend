@@ -48,8 +48,8 @@ export default function MealDetail(props) {
             <p className='whitespace'>{meal.directions}</p>
             
             <h3>Location</h3>
-            <div className='map'>
-              <p>I'll be a map one day.</p>
+            <div className='location'>
+              <p>{meal.location}</p>
             </div>
           </div>
 

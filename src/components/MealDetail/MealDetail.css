@@ -49,6 +49,7 @@
     width: 90%;
     flex-wrap: wrap;
     margin: 0 auto;
+    margin-bottom: 20px;
   }
 
   .MealDetail .picAndUpdate {

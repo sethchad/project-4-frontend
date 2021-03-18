@@ -21,8 +21,12 @@
 }
 
 @media (max-width: 500px) {
+  .Home {
+    margin: 0 auto;
+  }
+
   .Home h1 {
-    font-size: 100px;
+    font-size: 70px;
   }
 
 }

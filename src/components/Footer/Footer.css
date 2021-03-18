@@ -3,13 +3,26 @@
   justify-content: space-between;
   background-color: black;
   height: 50px;
+  padding-top: 10px;
 }
 
 .Footer h4 {
   margin-left: 20px;
+  color: white
 }
 
 .Footer a {
   margin-right: 20px;
+  font-size: 20px;
+  color: rgb(119, 208, 238)
 }
 
+@media (max-width: 500px) {
+  .Footer h4 {
+    font-size: 14px;
+  }
+
+  .Footer a {
+    font-size: 12px;
+  }
+}
