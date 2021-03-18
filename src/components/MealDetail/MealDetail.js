@@ -5,19 +5,14 @@ import Button from 'react-bootstrap/Button'
 
 export default function MealDetail(props) {
 
-  console.log('MealDetail props:', props)
-
   let meal = props.allMeals.find(meal => meal.id == props.match.params.id)
   let updateLink = `/meal/update/${props.match.params.id}`
-  console.log('MealDetail meal:', meal)
 
   let ingredientList = [];
   if (meal != undefined) {
     ingredientList = meal.Ingredients.map((value,index) => {
       return (
-        // <div className='ingredientItem'>
           <li className='ingredientItem' key={value.description}>{value.description}</li>
-        // </div>
       )
     })
   }

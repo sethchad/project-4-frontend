@@ -6,10 +6,6 @@ import Button from 'react-bootstrap/Button';
 
 export default function AllMeals(props) {
 
-  // if (props !== undefined) {
-  //   console.log('AllMeals props:', props)
-  // }
-
   let mealList = props.allMeals.map((value, index) => {
     return (
         <Card className='' key={value.id} style={{ width: '16rem' }}>

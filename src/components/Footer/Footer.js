@@ -1,7 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (

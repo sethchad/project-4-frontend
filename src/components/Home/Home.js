@@ -11,7 +11,6 @@ export default function Home() {
       <Link to="/allmeals">
         <Button variant="success">View the Recipes</Button>
       </Link>
-
     </div>
   )
 }

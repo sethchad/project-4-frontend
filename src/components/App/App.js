@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Link, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Header from '../Header/Header';
@@ -9,18 +9,14 @@ import MealDetail from '../MealDetail/MealDetail';
 import MealUpdate from '../MealUpdate/MealUpdate';
 import Footer from '../Footer/Footer';
 
-// let baseURL = 'http://localhost:3005/api/'
 let baseURL = 'https://chadwick-project-4-backend.herokuapp.com/api/'
-
-// Heroku git URL 
-// https://git.heroku.com/chadwick-project-4-backend.git
 
 export default class App extends Component {
   constructor() {
     super() 
     this.state = {
       allMeals: [],
-      mealId: undefined
+      // mealId: undefined
     }
   }
 
@@ -31,12 +27,10 @@ export default class App extends Component {
   getAllMeals = async() => {
     const url = baseURL + 'meals/';
     let response = await axios.get(url);
-    console.log('App API response:', response);
     
     this.setState({
       allMeals: response.data.meals
     })
-    // console.log('App this.allmeals:', this.state.allMeals);
   }
   
   addMeal = async(e) => {
@@ -46,12 +40,10 @@ export default class App extends Component {
       name: e.target.name.value
     }); 
     await this.getAllMeals();
-    // console.log('addMeal response:', response)
   }
 
   updateMeal = async(e) => {
     e.preventDefault()
-
     let mealId = e.target.id;
     const url = baseURL + 'meals/' + mealId;
 
@@ -67,7 +59,6 @@ export default class App extends Component {
 
   deleteMeal = async(e) => {
     e.preventDefault();
-    
     let mealId = e.target.id;
     const url = baseURL + 'meals/' + mealId
     let response = await axios.delete(url)
@@ -85,34 +76,23 @@ export default class App extends Component {
     })
     
     await this.getAllMeals();
-    console.log('addIngredient this.state.allMeals:', this.state.allMeals);
   }
   
   deleteIngredient = async(e) => {
     e.preventDefault();
-    
-    // console.log('deleteIngredient e.target:', e.target)
-    // console.log('deleteIngredient ingredientId e.target.id:', e.target.id)
-    // console.log('deleteIngredient mealIndex e.target.mealIndex.value:', e.target.mealIndex.value)
-    // console.log('deleteIngredient ingredientIndex e.target.ingedientIndex.value:', e.target.ingredientIndex.value)
     let ingredientId = e.target.id;
     let ingredientIndex = e.target.ingredientIndex.value;
     let mealIndex = e.target.mealIndex.value;
     let allMealsCopy = this.state.allMeals;
     const url = baseURL + 'meals/' + ingredientId + '/deleteingredient';
     
-    // console.log('mealIndex', mealIndex, 'ingredientIndex', ingredientIndex)
-    // console.log('allMealsCopy[mealIndex]:', allMealsCopy[mealIndex]);
-    
     allMealsCopy[mealIndex].Ingredients.splice(ingredientIndex, 1)
-    // console.log('allMealsCopy post-splice', allMealsCopy);
 
     this.setState({
         allMeals: allMealsCopy
       })
     
     await axios.delete(url);
-    // await this.getAllMeals();
   }
 
   render() {

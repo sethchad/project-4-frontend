@@ -6,14 +6,8 @@ import Form from 'react-bootstrap/Form';
 
 export default function MealUpdate(props) {
 
-  // console.log('MealUpdate props:', props)
-
   let meal = props.allMeals.find(meal => meal.id == props.match.params.id);
-  // console.log('MealUpdate meal:', meal);
-
   let mealIndex = props.allMeals.findIndex(meal => meal.id == props.match.params.id)
-  // console.log('MealUpdate mealIndex:', mealIndex);
-
 
   // Creates the list of ingredients, used as a variable below
   let ingredientList = [];
