@@ -4,9 +4,9 @@ This application is an online recipe book, allowing the user to add, edit, and d
 
 This is a full stack app that consists of a Node/Express backend connected to a Postgres database serving as the API, and React frontend. This app has full CRUD functionality, and both the backend and frontend are deployed on Heroku. 
 
-## Deployed App
-- [Deployed Recipe Book App](https://chadwick-project-4-frontend.herokuapp.com/)
-
+## Deployed App Links
+- [Deployed App Frontend - Heroku](https://chadwick-project-4-frontend.herokuapp.com/)
+- [Deployed App Backend - Heroku](https://chadwick-project-4-backend.herokuapp.com/)
 - [Repo for Backend Code](https://github.com/sethchad/project-4-backend)
 
 ## Screenshots
@@ -62,4 +62,4 @@ One feature that required significant debugging was the 'delete ingredient' func
 After multiple attempts to force the component to rerender in different ways, ultimately I changed the 'X' next to the ingredient item to a form with hidden input fields so that I could pass the index numbers of the meal and the ingredients in their respective arrays back to the delete function in the App component, in addition to the ingredient's id number, which was the only value needed for the axios delete call. I used the indexes to update the list of meals and ingredients in this.state prior to the axios call, which resolved the issue. 
 
 ## Future Development
-Future releases could include adding a third party API call to Google Maps or Leaflet to use the 'Location' attribute of a meal to render a map on the meal detail page. This would be convenient if the user had a meal at a particular restaurant and wanted to remember it, or if a meal was from a specific region or city. 
+Future releases could include adding a third party API call to Google Maps or Leaflet to use the 'Location' attribute of a meal to render a map on the meal detail page. This would be convenient if the user had a meal at a particular restaurant and wanted to see a map without going to another app, or if a meal was from a specific region or city. 
