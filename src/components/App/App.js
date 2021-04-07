@@ -39,7 +39,7 @@ export default class App extends Component {
     await axios.post(url, {
       name: e.target.name.value
     }); 
-    
+
     await this.getAllMeals();
   }
 
@@ -132,10 +132,10 @@ export default class App extends Component {
               path="/meal/:id" component={(routerProps) => (
                 <MealDetail 
                   allMeals={this.state.allMeals} 
-                  updateMeal={this.updateMeal}
-                  deleteMeal={this.deleteMeal}
-                  addIngredient={this.addIngredient} 
-                  deleteIngredient={this.deleteIngredient}
+                  // updateMeal={this.updateMeal}
+                  // deleteMeal={this.deleteMeal}
+                  // addIngredient={this.addIngredient} 
+                  // deleteIngredient={this.deleteIngredient}
                   {...routerProps} 
                 />
               )}
