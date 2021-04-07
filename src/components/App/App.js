@@ -35,7 +35,6 @@ export default class App extends Component {
   addMeal = async(e) => {
     e.preventDefault()
     const url = baseURL + 'meals/';
-    // let response = 
     await axios.post(url, {
       name: e.target.name.value
     }); 
@@ -47,8 +46,6 @@ export default class App extends Component {
     e.preventDefault()
     let mealId = e.target.id;
     const url = baseURL + 'meals/' + mealId;
-
-    // let response = 
     await axios.put(url, {
       name: e.target.name.value,
       imageUrl: e.target.imageUrl.value,
@@ -63,7 +60,6 @@ export default class App extends Component {
     e.preventDefault();
     let mealId = e.target.id;
     const url = baseURL + 'meals/' + mealId
-    // let response = 
     await axios.delete(url)
     
     await this.getAllMeals();
@@ -72,9 +68,7 @@ export default class App extends Component {
   addIngredient = async(e) => {
     e.preventDefault();
     let mealId = e.target.id;
-    
     const url = baseURL + 'meals/' + mealId + '/newingredient'
-    // let response = 
     await axios.post(url, {
       description: e.target.description.value
     })
@@ -132,10 +126,6 @@ export default class App extends Component {
               path="/meal/:id" component={(routerProps) => (
                 <MealDetail 
                   allMeals={this.state.allMeals} 
-                  // updateMeal={this.updateMeal}
-                  // deleteMeal={this.deleteMeal}
-                  // addIngredient={this.addIngredient} 
-                  // deleteIngredient={this.deleteIngredient}
                   {...routerProps} 
                 />
               )}
